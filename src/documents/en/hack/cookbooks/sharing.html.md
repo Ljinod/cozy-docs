@@ -99,7 +99,7 @@ var sharing = {
 ```
 
 
-> *Alice*: And what are exactly those fields?
+> *Alice*: And what are exactly those fields?<br />
 > *Cozy*: We've got you covered, the explanations are just below. ;-)
 
 
@@ -110,7 +110,7 @@ The fields in the sharing structure are:
   more than one recipient.
 * **rules**: a set of rules matching the documents shared. A rule is composed
   of the id of the document and its docType. You can have as many rules as you
-  like, one for each document shared.
+  like, one for each document shared.<br />
   Even though the docType is not needed to precisely identify a file, it is
   however useful for security measures.
 * **sync**: a boolean telling wether or not the share is synchronous (if a
@@ -120,7 +120,7 @@ The fields in the sharing structure are:
 And that is all you need to send a share request to your recipient(s)!
 
 
-> *Alice*: That's almost too easy!
+> *Alice*: That's almost too easy!<br />
 > *Cozy*: That's what we are here for: making your life easier!
 
 
