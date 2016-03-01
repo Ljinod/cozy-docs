@@ -219,9 +219,8 @@ When we receive such request we immediatly store the document in the database
 for further use, and in order to do so we have to add a **docType**. This is
 mandatory if we want to manage our document and the applications that can
 access it.<br />
-With this step CouchDB generates the **id** and the **docType** was
-automatically added by Cozy-sharing: we got rid of the first two items on our
-list!
+With this step CouchDB generates the **id**, the **docType** was automatically
+added by Cozy-sharing: we found the first two items on our list!
 
 > *Alice*: Is the id field useful besides being an identifier?<br />
 > *Cozy*: You're right, it serves another purpose that we will explain in an
