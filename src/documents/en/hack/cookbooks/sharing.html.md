@@ -16,9 +16,9 @@ possible.
 Yes, you have read me well: you very well might be able to share -- in a
 secure, private and reliable fashion -- with other proud Cozy owners!
 
-\\
-\\
-\\
+<br \>
+<br \>
+<br \>
 
 ## Nomenclature
 
@@ -34,9 +34,9 @@ every application can manage one or several type of documents. The document
 types an application can manage are set through *permissions* and that is for
 that same purpose that we will use it.
 
-\\
-\\
-\\
+<br \>
+<br \>
+<br \>
 
 
 ## API
@@ -46,8 +46,8 @@ things simple: in the following paragraphs we will explain why we implemented
 this, what we need to make it work and then what code an application has to add
 to enable this feature.
 
-\\
-\\
+<br \>
+<br \>
 
 ### Basics
 
@@ -62,7 +62,7 @@ We have two prerequisites for this to work:
 
 1. The **url** of the recipient's Cozy: if Alice wants to share with Bob she
    needs to know Bob's url. Just like if she wants to send a postcard to Bob
-   she needs Bob's address.\\
+   she needs Bob's address.<br \>
    *On a side note we, Cozy Cloud, will not provide the url of someone's Cozy:
    privacy is our core feature so there is no way for us to divulge such
    information.*
@@ -72,8 +72,8 @@ We have two prerequisites for this to work:
    meaningful we think it would be a waste of resources -- amongst all -- to
    allow it.
 
-\\
-\\
+<br \>
+<br \>
 
 ### [The Coding Love](http://thecodinglove.com)
 
@@ -97,12 +97,12 @@ var sharing = {
 };
 ```
 
-\\
+<br \>
 
-> *Alice*: And what are exactly those fields?\\
+> *Alice*: And what are exactly those fields?<br \>
 > *Cozy*: We've got you covered, the explanations are just below. ;-)
 
-\\
+<br \>
 
 The fields in the sharing structure are:
 
@@ -121,12 +121,12 @@ The fields in the sharing structure are:
 
 And that is all you need to send a share request to your recipient(s)!
 
-\\
+<br \>
 
-> *Alice*: That's almost too easy!\\
+> *Alice*: That's almost too easy!<br \>
 > *Cozy*: * blush *
 
-\\
+<br \>
 
 Now that you have everything it is high time to share. Here is how you could
 proceed:
@@ -147,7 +147,7 @@ client.post("sharing/", sharing, function(err, res, body) {
 });
 ```
 
-\\
+<br \>
 
 Here you go! You shared your document(s) to your recipient(s). Your Cozy will
 handle the rest of the operations and will display a notification when your
