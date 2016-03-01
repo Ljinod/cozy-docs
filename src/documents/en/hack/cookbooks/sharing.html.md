@@ -114,7 +114,7 @@ The fields in the sharing structure are:
 And that is all you need to send a share request to your recipient(s)!
 
 > *Alice*: That's almost too easy!<br />
-> *Cozy*: If not, feel free to tell us, we're to make your life easier!
+> *Cozy*: We certainly hope so. :-)
 
 Now that you have everything it is high time to share. Here is how you could
 proceed:
