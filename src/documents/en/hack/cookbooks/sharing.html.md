@@ -231,9 +231,12 @@ added by Cozy-sharing: we found the first two items on our list!
 > *Cozy*: You're right, it serves another purpose that we will explain in an
 > upcoming paragraph: access control.
 
-With those two fields set we can then send an actual request to the targets.
-Each target will receive a different request hence no information is shared
-between targets.
+With those two fields set we can then send an actual request to the targets. If
+you're worried about communicating the url of your Cozy to a recipient of the
+share, worry no more. Each target will receive a different request that
+contains only its data, hence no information regarding the others is shared.
+
+<br />
 
 Once the target's Cozy has receive the request, it will also create a sharing
 document copying all information received in the request except for the id,
