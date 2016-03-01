@@ -44,7 +44,6 @@ things simple: in the following paragraphs we will explain why we implemented
 this, what we need to make it work and then what code an application has to add
 to enable this feature.
 
-<br \>
 
 ### Basics
 
