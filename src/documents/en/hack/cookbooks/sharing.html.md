@@ -8,7 +8,7 @@ toc: true
 
 # Cozy-Sharing
 
-*DISCLAIMER*
+*DISCLAIMER*<br />
 As of when this documentation is being written we still are developping a way
 to enable the share of documents between Cozy. That means this
 documentation could be slightly out of date but we will update it as fast as
@@ -92,12 +92,9 @@ var sharing = {
 };
 ```
 
-<br />
-
 > *Alice*: And what are exactly those fields?<br />
 > *Cozy*: We've got you covered, the explanations are just below. ;-)
 
-<br />
 
 The fields in the sharing structure are:
 
@@ -117,7 +114,7 @@ The fields in the sharing structure are:
 And that is all you need to send a share request to your recipient(s)!
 
 > *Alice*: That's almost too easy!<br />
-> *Cozy*: * blush *
+> *Cozy*: If not, feel free to tell us, we're to make your life easier!
 
 Now that you have everything it is high time to share. Here is how you could
 proceed:
@@ -196,7 +193,7 @@ Let us describe the new fields:
   replication feature provided by CouchDB. We will tell more on this later.
 
 
-> *Alice*: Then, could you explain how we end up with this structure?
+> *Alice*: Then, could you explain how we end up with this structure?<br />
 > *Cozy*: It will be my pleasure!
 
 
@@ -226,7 +223,7 @@ With this step CouchDB generates the **id** and the **docType** was
 automatically added by Cozy-sharing: we got rid of the first two items on our
 list!
 
-> *Alice*: Is the id field useful besides being an identifier?
+> *Alice*: Is the id field useful besides being an identifier?<br />
 > *Cozy*: You're right, it serves another purpose that we will explain in an
 > upcoming paragraph: access control.
 
@@ -239,10 +236,10 @@ document copying all information received in the request except for the id,
 CouchDB will take care of this.
 
 > *Bob*: But you're creating a document on my Cozy even if, in the end, I
-> decline?
+> decline?<br />
 > *Cozy*: Hi Bob! Well yes, if we don't store it and only keep it in RAM then
 > if you decide to reboot your Cozy to install a new version of the platform,
-> you would loose the request in the process.
+> you would loose the request in the process.<br />
 > *Cozy*: If it's the idea of storing that troubles you imagine this a
 > receiving an e-mail. :-)
 
@@ -259,6 +256,6 @@ and can do nothing more.
 The second scenario is a bit more complicated but not too much for you to
 understand, we did it, so can you!
 
-> *Cozy*: Welcome to the real world!
-> *Bob* and *Alice*: What?
+> *Cozy*: Welcome to the real world!<br />
+> *Bob* and *Alice*: What?<br />
 > *Cozy*: No, nothing... It was just a glitch.
