@@ -68,7 +68,6 @@ We have two prerequisites for this to work:
    meaningful we think it would be a waste of resources -- amongst all -- to
    allow it.
 
-<br \>
 
 ### [The Coding Love](http://thecodinglove.com)
 
