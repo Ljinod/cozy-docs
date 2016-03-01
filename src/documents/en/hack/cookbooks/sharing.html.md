@@ -18,7 +18,6 @@ secure, private and reliable fashion -- with other proud Cozy owners!
 
 <br \>
 <br \>
-<br \>
 
 ## Nomenclature
 
@@ -36,7 +35,6 @@ that same purpose that we will use it.
 
 <br \>
 <br \>
-<br \>
 
 
 ## API
@@ -46,7 +44,6 @@ things simple: in the following paragraphs we will explain why we implemented
 this, what we need to make it work and then what code an application has to add
 to enable this feature.
 
-<br \>
 <br \>
 
 ### Basics
@@ -72,7 +69,6 @@ We have two prerequisites for this to work:
    meaningful we think it would be a waste of resources -- amongst all -- to
    allow it.
 
-<br \>
 <br \>
 
 ### [The Coding Love](http://thecodinglove.com)
