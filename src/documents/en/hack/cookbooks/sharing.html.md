@@ -222,6 +222,11 @@ access it.<br />
 With this step CouchDB generates the **id**, the **docType** was automatically
 added by Cozy-sharing: we found the first two items on our list!
 
+```javascript
+    id: "1aqwzsxed",
+    docType: "sharing",
+```
+
 > *Alice*: Is the id field useful besides being an identifier?<br />
 > *Cozy*: You're right, it serves another purpose that we will explain in an
 > upcoming paragraph: access control.
