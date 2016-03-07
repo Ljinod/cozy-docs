@@ -309,9 +309,12 @@ var Access = {
 };
 ```
 
-You don't have to know in details the meaning of this "Access" document, what
+You don't have to know in details the meaning of this *Access* document, what
 is important to note here is that we do limit the permissions to just the
 shared documents. Nothing more!
+
+With the *Access* document we found the third field on our list: **pwd**. One
+more to go!
 
 Now that the access control is in place the recipient's Cozy can reply to the
 sharer's who can initiate the *replication*.
@@ -319,8 +322,39 @@ sharer's who can initiate the *replication*.
 
 ### Sharing is...replication, and caring
 
-It is not always a good solution to reinvent the wheel when something already
-exists and does the job in a sufficient way. That is with that in mind that we
-decided to rely on CouchDB to replicate data from one CouchDB instance to
-another.
+We decided to rely on CouchDB to replicate data from one CouchDB instance to
+another. If you want to know more about this process you can find their
+documentation [here](https://wiki.apache.org/couchdb/Replication), we will only
+detail what we do in the following lines -- because that's what we know best.
+;-)
 
+So the sharer's Cozy received a positive answer to its sharing request. In that
+answer there were the credentials it needs to access the recipient's Cozy: the
+one thing left to do is to transfer the data.
+
+This step is pretty simple on the Cozy's side: we tell CouchDB that we want
+to replicate some documents to a target, information that is in the *sharing
+document*, and it handles the rest. CouchDB even returns a **replication id**
+if we want to manage/monitor it.
+
+And we have the final piece of the puzzle: CouchDB generates the **replication
+id** when it starts a replication. Our *sharing document* is now complete and
+the documents are shared.
+
+  
+  
+
+## TL;DR - Can I see a diagram?
+
+Apparently an image is worth a thousand words so if you are more confortable
+with an image we even did that.
+
+  
+
+![alt](../../../../files/assets/images/cozy-sharing-diagram.png)
+
+  
+
+**Legend:**
+\*: this is a simplification, we did not want to burden our diagram with more
+information
