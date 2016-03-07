@@ -339,7 +339,12 @@ if we want to manage/monitor it.
 
 And we have the final piece of the puzzle: CouchDB generates the **replication
 id** when it starts a replication. Our *sharing document* is now complete and
-the documents are shared.
+the documents are shared!
+
+  
+
+That's it, you know how we proceed to share documents and what information we
+store in the database. Well done! :-)
 
   
   
