@@ -355,6 +355,6 @@ with an image we even did that.
 
   
 
-**Legend:**
+**Legend:**  
 \*: this is a simplification, we did not want to burden our diagram with more
-information
+information.
