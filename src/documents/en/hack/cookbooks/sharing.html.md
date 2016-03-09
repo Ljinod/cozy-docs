@@ -366,3 +366,11 @@ with an image we even did that.
 **Legend:**  
 \*: this is a simplification, we did not want to burden our diagram with more
 information.
+
+## Future directions
+
+This is the very first step for a fully decentralized sharing between Cozy owners. We plan to extend it to add new features, such as bilateral synchronisation and dynamic sharing rules evaluation, so this document will quicly evolve!
+
+But the ultimate goal is to be able to share data with others decentralized projects, such as ownCloud, Known, or Pydio.
+This is the purpose of the [Decentralized Sharing Community Group](https://www.w3.org/community/decsharing/), and we except to find a way all together to implement a true interoperable sharing.
+
