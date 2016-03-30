@@ -1,0 +1,68 @@
+title Cozy-sharing protocol
+
+participant Alice as A
+participant "Alice's\nCozy" as AC
+participant "Alice's\nCouchDB" as ADB
+
+participant Bob as B
+participant "Bob's\nCozy" as BC
+participant "Bob's\nCouchDB" as BDB
+
+A->+AC: share with Bob
+AC->ADB: create\nsharing document
+activate ADB
+ADB-->AC: return\ndocument id
+deactivate ADB
+AC->AC: generate\npreToken
+AC->-BC: send share request
+activate BC
+BC->BDB: create\nshare document
+activate BDB
+BDB-->BC: return\ndocument id
+deactivate BDB
+BC->-B: display\nnotification
+
+alt request DENIED
+B->+BC: refuse request
+BC->BDB: delete\nshare document
+activate BDB
+BDB-->-BDB: document\ndeleted
+BC->AC:request denied
+deactivate BC
+activate AC
+AC->AC: verify\npreToken
+AC->+ADB: delete\nshare document
+ADB-->-ADB: document\ndeleted
+AC->A: display\nnotification
+deactivate AC
+
+else request ACCEPTED
+B->+BC: accept request
+BC->BC: generate\ntoken
+BC->+BDB: create access
+BDB-->BC: done
+deactivate BDB
+BC->+AC: request accepted
+deactivate BC
+AC->AC: verify\npreToken
+AC->+ADB: complete\nshare document\nwith\nlogin/token\nand\nremove preToken
+ADB-->AC: done
+deactivate ADB
+AC->A: display notification
+AC->+ADB: create\nreplication
+ADB-->AC: return\nreplication id
+deactivate AC
+
+ADB->+BC: replicate*
+deactivate ADB
+
+BC->BC: check\nauthentication\nand\npermissions
+alt Authentication failed
+BC-->ADB: authentication failed
+else Authentication succeeded
+BC->+BDB: transfer data*
+deactivate BC
+BDB-->+ADB: ok
+deactivate ADB
+deactivate BDB
+end
