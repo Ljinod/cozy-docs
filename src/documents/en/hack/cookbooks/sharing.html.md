@@ -144,8 +144,9 @@ permission called **sharing**.
 
   
 
-Here you go! You shared your document(s) to your recipient(s). Your Cozy will
-handle the rest of the operations and will display a notification when your
+Here you go! You shared your document(s) to your recipient(s): their Cozy will
+display a notification to warn them about the share request, yours will handle
+the rest of the operations and will also display a notification when your
 request will be accepted or -- we sure don't hope so -- denied. :-)
 
   
