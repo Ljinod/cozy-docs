@@ -267,7 +267,8 @@ var request = {
 As you can see we create the request by extracting only the relevant
 information from the sharing document. We also do not communicate the list of
 recipients, so you don't have to worry about having the url of your Cozy in the
-open.  
+open. Also we rely on the [https protocol](https://en.wikipedia.org/wiki/HTTPS)
+for all communications so everything you send and receive will be encrypted.  
 We add the url of the sharer so that the recipient can reply -- if you happen
 to use an onion router then we would not be able to tell from whom the request
 came.
