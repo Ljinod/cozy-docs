@@ -145,12 +145,10 @@ permission called **sharing**.
   
 
 Here you go! You shared your document(s) to your recipient(s): their Cozy will
-display a notification to warn them about the share request, yours will handle
-the rest of the operations and will also display a notification when your
-request will be accepted or -- we sure don't hope so -- denied. :-)
+display a notification to warn them about the share request. Once they have
+answered yours will handle the rest of the operations and also inform you about
+their response through yet another notification.
 
-  
-  
 
 ## The Protocol
 
@@ -258,7 +256,7 @@ var request = {
 };
 ```
 
-> *Alice*: `preToken`? What's that? You never said anything about it before.  
+> *Alice*: "preToken"? What's that? You never said anything about it before.  
 > *Cozy*: It's another means for authentication. We never said anything because
 > you do not have to worry about it: we automatically add it to the request you
 > send and we also automatically delete once it's not useful. If you want more
@@ -355,9 +353,9 @@ rules: [
 
 The two fields composing a rule are used for the following reasons:
 * **id**: it tells us which document the sharer, Alice, is going to create or
-  update on the recipient's Cozy. Since an identifier is unique we can make
-  several checks, notably to verify if she is trying to access a document the
-  recipient has already in his database.
+  update on the recipient's Cozy. Since an identifier is unique we can check
+  that it does not exist in the recipient's database, to prevent any unwanted
+  access.
 * **docType**: we use it to generate a description message in addition to the
   one the sharer writes. In this description we produce, we add the docType of
   the documents that are shared so that the recipient can double-check what the
