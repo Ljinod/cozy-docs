@@ -334,10 +334,48 @@ is important to note here is that we do limit the permissions to just the
 shared documents. Nothing more!
 
 With the *Access* document we found the third field on our list: **token**. One
-more to go!
+more to go! But before we go on to our finalist we would like to explore a
+little bit another protection we have implemented to secure the access on a
+Cozy: rules enforcement.
 
-Now that the access control is in place the recipient's Cozy can reply to the
-sharer's who can initiate the *replication*.
+
+### Their Law: the singles
+
+To ensure that Alice can only update or create the documents she is supposed to
+with her credentials -- we suppose that she has passed the authentication -- we
+enforce the *rules* we define in the share document. A set of rules looks like:
+
+
+```javascript
+rules: [
+    { id: 1, docType: "picture" },
+    { id: 2, docType: "event" }
+]
+```
+
+The two fields composing a rule are used for the following reasons:
+* **id**: it tells us which document the sharer, Alice, is going to create or
+  update on the recipient's Cozy. Since an identifier is unique we can make
+  several checks, notably to verify if she is trying to access a document the
+  recipient has already in his database.
+* **docType**: we use it to generate a description message in addition to the
+  one the sharer writes. In this description we produce, we add the docType of
+  the documents that are shared so that the recipient can double-check what the
+  sharer says he is going to send. As goes the Russian proverb: "*Trust, but
+  verify*."
+
+
+> *Alice*: When you say "update" you mean that a sharer can modify a document
+> that already exists?  
+> *Cozy*: When we say "update" we think of *continuous*. When a sharer wants
+> the updates (s)he makes on a document to be propagated to the recipients
+> (s)he needs to be able to access that particular document on the recipients'
+> Cozy, to update. That is the only scenario. :-)
+
+
+Now that the access control is in place and we know the purpose of the rules
+we define, the recipient's Cozy can reply to the sharer's who can initiate the
+*replication*.
 
 
 ### Sharing is...replication, and caring
