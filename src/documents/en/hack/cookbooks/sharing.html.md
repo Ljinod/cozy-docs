@@ -14,7 +14,12 @@ to enable the share of documents between Cozy. That means this
 documentation could be slightly out of date but we will update it as fast as
 possible.
 
-  
+##TL;DR
+
+If you're an app developer, you just need to follow those steps in order to share documents : 
+* Declare the sharing permission in your package.json.
+* Create the [sharing object](#sharing_object) containing the documents to share and the recipients' urls.
+* Call the `cozydb.api.createSharing` method by passing the previously defined sharing object in parameter.
   
 
 ## Nomenclature
@@ -75,16 +80,17 @@ The structure on which the protocol relies is what we have called "*sharing*"
 (we are no poets). This structure will be sent to the recipient and requires
 the following information:
 
+<a name="sharing_object"></a>
 ```javascript
 var sharing = {
     desc: "Hey Bob this is my picture from my last holidays!",
     targets: [
-        { url: "bob.hiscozycloud.com" }
+        { recipientUrl: "bob.hiscozycloud.com" }
     ],
     rules: [
         { id: 1, docType: "picture" }
     ],
-    continuous: false
+    continuous: true
 };
 ```
 
@@ -103,8 +109,8 @@ The fields in the sharing structure are:
   like, one for each document shared.  
   Even though the docType is not needed to precisely identify a file, it is
   however useful for security measures.
-* **continuous**: a boolean telling wether or not every change the sharer makes
-  on the document is propagated to the recipients.
+* **continuous**: [optionnal] a boolean telling whether or not every change the sharer makes
+  on the document is propagated to the recipients. If this field is missing, the default value is true.
 
 > *Alice*: That's it?  
 > *Cozy*: Yup, that's all the information you need to send. :-)
@@ -131,9 +137,19 @@ client.post("services/sharing/", sharing, function(err, res, body) {
 });
 ```
 
-> *Alice*: Credentials?  
-> *Cozy*: Indeed, we don't want any application to be able to share your files.
-> Your application needs to ask for the **"sharing" permission** to be able to
+Or even simpler, using [cozy-db](https://github.com/cozy/cozy-db), the Cozy ORM
+```javascript
+cozydb.api.createSharing sharing, (err, body) ->
+    if(err) {
+        // handle error
+    } else {
+        // show must go on!
+    }
+```
+    
+
+> *Alice*: So any application can share data?  
+> *Cozy*: Yes, but your application needs to ask for the **"sharing" permission** to be able to
 > share.
 
 If you don't know how to declare the permissions your application requires,
@@ -177,8 +193,8 @@ var sharing = {
         { id: 2, docType: "event" }
     ],
     targets: [
-        { url: "bob.hiscozycloud.com", token: "token1", repID: "rep1" },
-        { url: "charles.cozy.hk", token: "token2", repID: "rep2" }
+        { recipientUrl: "bob.hiscozycloud.com", token: "token1", repID: "rep1" },
+        { recipientUrl: "charles.cozy.hk", token: "token2", repID: "rep2" }
     ],
     continuous: true
 };
@@ -210,8 +226,8 @@ resembles this:
 var sharing = {
     desc: "A description of the documents",
     targets: [
-        { url: "bob.hiscozycloud.com" },
-        { url: "charles.cozy.hk" }
+        { recipientUrl: "bob.hiscozycloud.com" },
+        { recipientUrl: "charles.cozy.hk" }
     ],
     rules: [
         { id: 1, docType: "picture" },
@@ -250,7 +266,7 @@ var request = {
     ],
     continuous: true,
     target: {
-        url: "alice.cozycloud.com",
+        recipientUrl: "alice.cozycloud.com",
         preToken: "preToken_of_alice"
    }
 };
